@@ -15,3 +15,6 @@ public class MyApp implements CommandLineRunner {
         System.out.println("o resultado é " + calculadora.somar(2,7));
     }
 }
+
+// Beans quando nn temos acesso ao codigo fonte
+// Components class que tem a possibilidade dela ser provida atraves do conceito de dependencias
