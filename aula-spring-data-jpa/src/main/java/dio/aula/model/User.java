@@ -3,6 +3,8 @@ package dio.aula.model;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name= "users")    // OBS: quando usar "user" o H2 pode entender como uma palavra nativa e, por isso, não funcionar
+                        // o table funciona p atribuir a user o nome "users"
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,5 +39,15 @@ public class User {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 }
