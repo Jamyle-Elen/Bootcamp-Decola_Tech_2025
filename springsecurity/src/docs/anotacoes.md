@@ -34,14 +34,3 @@ http.csrf().disable()   // Desativa o csrf
 
 {noop}  // É pra dizer que não quer criptografar a senha
 .password("{noop}123456")
-
----
-
-# Actuator
-
-### Actuator traz recursos prontos para produção para a aplicação
-
-#### Propriedades
-
-management.endpoint.health.show-details=always  // Mostra todos os detalhes, sempre
-management.endpoint.web.exposure.include=*
