@@ -8,6 +8,7 @@ class SpringBootAdminApplicationTests {
 
 	@Test
 	void contextLoads() {
+		
 	}
 
 }
