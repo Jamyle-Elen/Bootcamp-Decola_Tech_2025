@@ -1,25 +1,42 @@
-package dio.dio_spring_security;
+// package dio.dio_spring_security;
 
-import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+// import org.springframework.context.annotation.Bean;
+// import org.springframework.context.annotation.Configuration;
+// import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+// import org.springframework.security.core.userdetails.User;
+// import org.springframework.security.core.userdetails.UserDetails;
+// import org.springframework.security.core.userdetails.UserDetailsService;
+// import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+// import org.springframework.security.web.SecurityFilterChain;
 
-@Configuration   // indica que é uma classe de configuração
-@EnableWebSecurity   // Habilitando uma segurança web de forma manual
-                  // OBS: Não utiliza mais o EnableGlobalMethodSecurity, pois ele foi removido, agora usamos o SecurityFilterChain
-public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+// @Configuration
+// public class WebSecurityConfig {
 
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {  // Ele vai criar uma cadeia de usuarios em memoria
-        auth.inMemoryAuthentication()
-                .withUser("user")
-                .password("{noop}user123")
-                .roles("USERS")
-                .and()
-                .withUser("admin")
-                .password("{noop}master123")
-                .roles("MANAGERS");
-    }
-    
-}
+//     @Bean
+//     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+//         http
+//             .csrf(csrf -> csrf.disable())
+//             .authorizeHttpRequests(auth -> auth
+//                 .anyRequest().authenticated()
+//             )
+
+//         return http.build();
+//     }
+
+//     @Bean
+//     public UserDetailsService userDetailsService() {
+//         UserDetails user = User.withDefaultPasswordEncoder()
+//             .username("user")
+//             .password("user123") // Sem criptografia, igual ao código antigo
+//             .roles("USERS")
+//             .build();
+
+//         UserDetails admin = User.withDefaultPasswordEncoder()
+//             .username("admin")
+//             .password("master123")
+//             .roles("MANAGERS")
+//             .build();
+
+//         return new InMemoryUserDetailsManager(user, admin);
+//     }
+// }
