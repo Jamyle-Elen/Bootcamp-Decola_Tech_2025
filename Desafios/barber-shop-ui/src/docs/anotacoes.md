@@ -9,3 +9,16 @@ ng g c clients/new-client &&
 Servições que deseja utilizar em outro lugar
 
 `touch` criar, ele utilizamos pra indicar onde vamos criar
+
+# Bibliotecas
+### Para mascarar os campos (telefone, cpf, etc)
+
+`import { provideNgxMask } from 'ngx-mask';`
+`provideNgxMask({})`
+
+
+### Delete não tem paramentro então ao invés de:
+  return this.http.post<SaveClientResponse>(`${this.basePath}clients`, request)
+
+Seria:
+    return this.http.delete<void>(`${this.basePath}clients${id}`)
