@@ -1,8 +1,8 @@
 ng g c clients/new-client &&
 ng g c clients/list-clients &&
 ng g c clients/edit-client &&
-ng g c clients/components-client-form &&
-ng g c clients/components-client-table &&
+ng g c clients/components/client-form &&
+ng g c clients/components/client-table &&
 
 touch src/app/clients/client.models.ts &&
 

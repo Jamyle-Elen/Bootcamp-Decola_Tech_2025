@@ -22,3 +22,10 @@ Servições que deseja utilizar em outro lugar
 
 Seria:
     return this.http.delete<void>(`${this.basePath}clients${id}`)
+
+
+### Curiosidade
+pode usar _ para ignorar (mesmo efeito de utilizar parenteses)
+    this.httpService.save(request).subscribe(_ => {}) ou
+    this.httpService.save(request).subscribe(() => {})
+    

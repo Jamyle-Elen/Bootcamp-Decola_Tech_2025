@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ComponentsClientTableComponent } from './components-client-table.component';
+import { ComponentsClientTableComponent } from './client-table.component';
 
 describe('ComponentsClientTableComponent', () => {
   let component: ComponentsClientTableComponent;

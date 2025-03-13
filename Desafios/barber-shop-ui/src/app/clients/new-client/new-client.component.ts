@@ -1,11 +1,15 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnDestroy } from '@angular/core';
 import { ClientsService } from '../../services/api-client/clients/clients.service';
 import { SERVICES_TOKEN } from '../../services/service.token';
 import { IClientService } from '../../services/api-client/clients/iclients.service';
+import { ComponentsClientFormComponent } from "../components/client-form/client-form.component";
+import { ClientModelForm } from '../client.models';
+import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-client',
-  imports: [],
+  imports: [ComponentsClientFormComponent],
   templateUrl: './new-client.component.html',
   styleUrl: './new-client.component.scss',
   providers: [
@@ -14,7 +18,27 @@ import { IClientService } from '../../services/api-client/clients/iclients.servi
     }
   ]
 })
-export class NewClientComponent {
+export class NewClientComponent implements OnDestroy {
 
-  constructor(@Inject(SERVICES_TOKEN.HTTP.CLIENT) private readonly httpService: IClientService) { }
+  private httpSubscription?: Subscription
+
+  constructor(
+    @Inject(SERVICES_TOKEN.HTTP.CLIENT) private readonly httpService: IClientService,
+    private readonly routers: Router
+  ) {}
+
+  ngOnDestroy(): void {
+    if (this.httpSubscription) {
+      this.httpSubscription.unsubscribe()
+    }
+  }
+
+  onSubmitClient(value: ClientModelForm) {
+    const {id, ...request} = value
+    this.httpService.save(request).subscribe(_ => {
+      this.routers.navigate(['clients/list'])
+    })
+  }
+
+
 }
