@@ -36,7 +36,7 @@ export class NewClientComponent implements OnDestroy {
   }
 
   onSubmitClient(value: ClientModelForm) {
-    console.log(value)
+    // console.log(value)
     const {id, ...request} = value
     this.httpService.save(request).subscribe(_ => {
       this.snackBarManager.show('Usuário cadastrado com sucesso')
