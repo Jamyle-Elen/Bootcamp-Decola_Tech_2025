@@ -29,3 +29,9 @@ pode usar _ para ignorar (mesmo efeito de utilizar parenteses)
     this.httpService.save(request).subscribe(_ => {}) ou
     this.httpService.save(request).subscribe(() => {})
     
+
+### Rotas
+Em Angular Router, os curingas (* e **) são usados para capturar rotas não definidas.
+
+* isolado não tem dignificado especial no Angular
+** Captura qualquer rota que não tenha sido definida. Conhecido como <strong>`wildcard`</strong>

@@ -1,0 +1,28 @@
+{
+  "clients": [
+    {
+      "id": "4127",
+      "name": "Jamyle Elen Cardoso do Nascimento",
+      "email": "jamyleelen09@gmail.com",
+      "phone": "55819823895"
+    },
+    {
+      "id": "28fc",
+      "name": "Rhuan Pablo Monteiro da Silva",
+      "email": "rhuanpablomonteiro@gmail.com",
+      "phone": "55819823895"
+    },
+    {
+      "id": "d05c",
+      "name": "Jamyle Elen Cardoso do Nascimento",
+      "email": "23432@dsdf",
+      "phone": "55819823895"
+    },
+    {
+      "id": "a87d",
+      "name": "Jamyle Elen Cardoso do Nascimento",
+      "email": "jamyleelen09@gmail.com",
+      "phone": "55819823895"
+    }
+  ]
+}

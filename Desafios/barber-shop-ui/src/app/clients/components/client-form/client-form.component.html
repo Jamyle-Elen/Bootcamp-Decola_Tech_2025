@@ -13,7 +13,7 @@
       <div class="col-6">
         <mat-form-field class="fil-col">
           <mat-label>E-mail</mat-label>
-          <input mat-Input name="email" id="email" #emailModel="ngModel" [(ngModel)]="client.email" required email>
+          <input matInput name="email" id="email" #emailModel="ngModel" [(ngModel)]="client.email" required email>
             <mat-error *ngIf="emailModel.hasError('required') || emailModel.hasError('email')">
               Informe um email válido para o cliente
             </mat-error>
@@ -33,7 +33,7 @@
 
     <div class="row">
       <div class="col div-button">
-        <button type="submit" mat-flat-button [disabled]="form.invalid"></button>
+        <button type="submit" mat-flat-button [disabled]="form.invalid">Enviar</button>
       </div>
     </div>
   </div>
