@@ -3,14 +3,14 @@ import { IClientService } from './iclients.service';
 import { Observable } from 'rxjs';
 import { DetailClientResponse, ListClientResponse, SaveClientRequest, SaveClientResponse, updateClientRequest, UpdateClientResponse } from './client.models';
 import { HttpClient } from '@angular/common/http';
-import { enviroments } from '../../../../enviroments/enviroments';
+import { Environments } from '../../../../enviroments/environments';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClientsService implements IClientService {
 
-  private readonly basePath = enviroments.apiUrl
+  private readonly basePath = Environments.apiUrl
 
   constructor(private http: HttpClient) { }
 

@@ -5,7 +5,7 @@ import { ListClientsComponent } from './clients/list-clients/list-clients.compon
 import { SchedulesMonthComponent } from './schedules/schedules-month/schedules-month.component';
 
 export const routes: Routes = [
-  { path: 'clientes/edit-client/:id', component: EditClientComponent, data: {title: 'Atualizar Client'}},
+  { path: 'clients/edit-client/:id', component: EditClientComponent, data: {title: 'Atualizar Cliente'}},
   { path: 'clients/new-client', component: NewClientComponent , data: {title: 'Cadastrar Cliente'}},
   { path: 'clients/list', component: ListClientsComponent, data: {title: 'Clientes Cadastrados'}},
   { path: 'schedules/month', component: SchedulesMonthComponent, data: {title: 'Agendamentos'}},
