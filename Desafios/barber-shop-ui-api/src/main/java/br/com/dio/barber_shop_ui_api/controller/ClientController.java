@@ -63,7 +63,7 @@ public class ClientController {
         }
     }
 
-    @GetMapping("/clients")
+    @GetMapping // ("/clients")  nn vai precisar por conta do RequestMapping
     public Iterable<ClientEntity> listar() {
         try {
             return service.listar();

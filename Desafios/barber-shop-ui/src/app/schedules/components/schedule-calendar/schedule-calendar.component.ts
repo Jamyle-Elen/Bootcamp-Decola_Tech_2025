@@ -104,42 +104,49 @@ export class ScheduleCalendarComponent implements OnDestroy, AfterViewInit, OnCh
   }
 
   onSubmit(form: NgForm) {
-    if (!this.monthSchedule || !this.monthSchedule.scheduledAppointments) {
-      console.error('monthSchedule não está inicializado corretamente');
-      return;
-    }
+		if (!this.monthSchedule || !this.monthSchedule.scheduledAppointments) {
+			console.error('monthSchedule não está inicializado corretamente');
+			return;
+		}
 
-    if (!this.newSchedule.startAt || !this.newSchedule.endAt || !this.newSchedule.clientId) {
-      console.error('Dados do novo agendamento estão incompletos');
-      return;
-    }
+		if (!this.newSchedule.startAt || !this.newSchedule.endAt || !this.newSchedule.clientId) {
+			console.error('Dados do novo agendamento estão incompletos');
+			return;
+		}
 
-    const startAt = new Date(this._selected);
-    const endAt = new Date(this._selected);
-    startAt.setHours(this.newSchedule.startAt.getHours(), this.newSchedule.startAt.getMinutes());
-    endAt.setHours(this.newSchedule.endAt.getHours(), this.newSchedule.endAt.getMinutes());
+		const startAt = new Date(this._selected);
+		const endAt = new Date(this._selected);
+		startAt.setHours(this.newSchedule.startAt.getHours(), this.newSchedule.startAt.getMinutes());
+		endAt.setHours(this.newSchedule.endAt.getHours(), this.newSchedule.endAt.getMinutes());
 
-    const client = this.clients.find(c => c.id === this.newSchedule.clientId);
-    if (!client) {
-      console.error('Cliente não encontrado');
-      return;
-    }
+		const client = this.clients.find(c => c.id === this.newSchedule.clientId);
+		if (!client) {
+			console.error('Cliente não encontrado');
+			return;
+		}
 
-    const saved: ClientScheduleAppointmentModel = {
-      id: -1,
-      day: this._selected.getDate(),
-      startAt,
-      endAt,
-      clientId: this.newSchedule.clientId,
-      clientName: client.name
-    };
+		const saved: ClientScheduleAppointmentModel = {
+			id: -1,
+			day: this._selected.getDate(),
+			startAt,
+			endAt,
+			clientId: this.newSchedule.clientId,
+			clientName: client.name
+		};
 
-    this.monthSchedule.scheduledAppointments.push(saved);
-    this.onScheduleClient.emit(saved);
-    this.buildTable();
-    form.resetForm();
-    this.newSchedule = { startAt: undefined, endAt: undefined, clientId: undefined };
-  }
+		this.monthSchedule.scheduledAppointments.push(saved);
+		this.onScheduleClient.emit(saved);
+		this.buildTable();
+
+		const tempSchedule = { ...this.newSchedule };
+
+		this.newSchedule = { startAt: undefined, endAt: undefined, clientId: undefined };
+
+		setTimeout(() => {
+			form.resetForm();
+			console.log("Formulário resetado com sucesso");
+		});
+	}
 
   requestDelete(schedule: ClientScheduleAppointmentModel) {
     this.subscription = this.dialogManagerService.showYesNoDialog(
@@ -158,10 +165,25 @@ export class ScheduleCalendarComponent implements OnDestroy, AfterViewInit, OnCh
   }
 
   onTimeChange(time: Date) {
-    const endAt = new Date(time);
-    endAt.setHours(time.getHours() + 1);
-    this.newSchedule.endAt = endAt;
-  }
+		if (time && time instanceof Date && !isNaN(time.getTime())) {
+			const startAt = new Date(time.getTime());
+			this.newSchedule.startAt = startAt;
+
+			const endAt = new Date(time.getTime());
+			endAt.setHours(time.getHours() + 1);
+			this.newSchedule.endAt = endAt;
+
+			console.log('Horário definido:', {
+				startAt: this.newSchedule.startAt,
+				endAt: this.newSchedule.endAt
+			});
+
+		} else {
+			console.error('O tempo fornecido é inválido:', time);
+			this.newSchedule.startAt = undefined;
+			this.newSchedule.endAt = undefined;
+		}
+	}
 
   private buildTable() {
     if (!this.monthSchedule || !this.monthSchedule.scheduledAppointments) {

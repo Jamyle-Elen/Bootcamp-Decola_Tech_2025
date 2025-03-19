@@ -1,18 +1,23 @@
 package br.com.dio.barber_shop_ui_api.controller.request;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.validation.constraints.NotNull;
 
-import java.time.OffsetDateTime;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.time.Instant;
+// import java.time.OffsetDateTime;
 
 public record SaveScheduleRequest(
-        @NotNull
         @JsonProperty("startAt")
-        OffsetDateTime startAt,
-        @NotNull
+        @NotNull(message = "A data e hora de início são obrigatórias")
+        Instant startAt,
+
         @JsonProperty("endAt")
-        OffsetDateTime endAt,
-        @NotNull
+        @NotNull(message = "A data e hora de término são obrigatórias")
+        Instant endAt,
+
         @JsonProperty("clientId")
+        @NotBlank(message = "O ID do cliente é obrigatório")
         String clientId
 ) {}

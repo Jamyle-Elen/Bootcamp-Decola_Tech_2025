@@ -22,7 +22,7 @@ export class SchedulesService implements IScheduleService {
     return this.http.delete<void>(`${this.basePath}schedules/${id}`)
   }
   listInMonth(year: number, month: number): Observable<ScheduleAppointmentMonthResponse> {
-    return this.http.get<ScheduleAppointmentMonthResponse>(`${this.basePath}schedules/${year}/${month}`)
+    return this.http.post<ScheduleAppointmentMonthResponse>(`${this.basePath}schedules/month`, { year, month })
   }
 
 }

@@ -2,14 +2,15 @@ package br.com.dio.barber_shop_ui_api.service.query;
 
 import br.com.dio.barber_shop_ui_api.entity.ScheduleEntity;
 
-import java.time.OffsetDateTime;
+import java.time.Instant;
+// import java.time.OffsetDateTime;
 import java.util.List;
 
 public interface IScheduleQueryService {
 
     ScheduleEntity findById(final String id);
 
-    List<ScheduleEntity> findInMonth(final OffsetDateTime startAt, final OffsetDateTime endAt);
+    List<ScheduleEntity> findInMonth(final Instant startAt, final Instant endAt);
 
-    void verifyIfScheduleExists(final OffsetDateTime startAt, final OffsetDateTime endAt);
+    void verifyIfScheduleExists(final Instant startAt, final Instant endAt);
 }

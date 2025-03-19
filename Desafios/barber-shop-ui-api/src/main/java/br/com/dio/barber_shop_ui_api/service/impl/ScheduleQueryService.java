@@ -8,7 +8,8 @@ import br.com.dio.barber_shop_ui_api.service.query.IScheduleQueryService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.time.OffsetDateTime;
+import java.time.Instant;
+// import java.time.OffsetDateTime;
 import java.util.List;
 
 @Service
@@ -25,12 +26,12 @@ public class ScheduleQueryService implements IScheduleQueryService {
     }
 
     @Override
-    public List<ScheduleEntity> findInMonth(final OffsetDateTime startAt, final OffsetDateTime endAt) {
+    public List<ScheduleEntity> findInMonth(final Instant startAt, final Instant endAt) {
         return repository.findByStartAtGreaterThanEqualAndEndAtLessThanEqualOrderByStartAtAscEndAtAsc(startAt, endAt);
     }
 
     @Override
-    public void verifyIfScheduleExists(final OffsetDateTime startAt, final OffsetDateTime endAt) {
+    public void verifyIfScheduleExists(final Instant startAt, final Instant endAt) {
         if (repository.existsByStartAtAndEndAt(startAt, endAt)) {
             var message = "Já existe um cliente agendado no horário solicitado entre " + startAt + " e " + endAt + ".";
             throw new ScheduleInUseException(message);
