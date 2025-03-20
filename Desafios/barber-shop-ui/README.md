@@ -1,5 +1,6 @@
 # Barber Shop
 [![Leia o README em Inglês](https://img.shields.io/badge/README-Inglês-yellow)](./README_EN.md)
+[![Visualizar backend](https://img.shields.io/badge/BACKEND-blue)](https://github.com/Jamyle-Elen/Bootcamp-Decola_Tech_2025/tree/main/Desafios/barber-shop-ui-api)
 
 ## 📋 Sobre o Projeto
 O **BarberShop** é uma aplicação desenvolvida como parte do desafio do Bootcamp Decola Tech, oferecido pela DIO em parceria com a Avanade. A aplicação tem como objetivo gerenciar clientes e serviços de uma barbearia, permitindo cadastro, edição e visualização de informações de maneira eficiente.
