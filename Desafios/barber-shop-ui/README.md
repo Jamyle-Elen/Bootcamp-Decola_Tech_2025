@@ -1,4 +1,4 @@
-Barber Shop
+# Barber Shop
 [![Leia o README em Inglês](https://img.shields.io/badge/README-Inglês-yellow)](./README_EN.md)
 
 ## 📋 Sobre o Projeto
