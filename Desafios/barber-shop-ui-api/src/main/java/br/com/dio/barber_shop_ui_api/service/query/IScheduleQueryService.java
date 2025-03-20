@@ -3,7 +3,6 @@ package br.com.dio.barber_shop_ui_api.service.query;
 import br.com.dio.barber_shop_ui_api.entity.ScheduleEntity;
 
 import java.time.Instant;
-// import java.time.OffsetDateTime;
 import java.util.List;
 
 public interface IScheduleQueryService {

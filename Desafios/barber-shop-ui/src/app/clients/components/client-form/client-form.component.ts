@@ -24,12 +24,11 @@ import { NgIf } from '@angular/common';
 })
 export class ComponentsClientFormComponent {
 
-  @Input() client: ClientModelForm = { id: 0, name: '', email: '', phone: '' };
+  @Input() client: ClientModelForm = { id: '', name: '', email: '', phone: '' };
 
   @Output() clientSubmited = new EventEmitter<ClientModelForm>();
 
   onSubmit(_: NgForm) {
-    // console.log(this.client)
     this.clientSubmited.emit(this.client);
   }
 }

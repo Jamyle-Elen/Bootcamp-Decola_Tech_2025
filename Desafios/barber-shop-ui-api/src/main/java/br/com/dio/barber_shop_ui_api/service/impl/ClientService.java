@@ -44,15 +44,16 @@ public class ClientService implements IClientService {
 
     @Override
     public ClientEntity update(final ClientEntity entity) {
+        queryService.verifyName(entity.getId());
         queryService.verifyEmail(entity.getId(), entity.getEmail());
         queryService.verifyPhone(entity.getId(), entity.getPhone());
 
         var stored = queryService.findById(entity.getId());
+        stored.setName(entity.getName());
         stored.setEmail(entity.getEmail());
         stored.setPhone(entity.getPhone());
         return repository.save(stored);
     }
-    // Transient annotation -> da uma olhada
 
     @Override
     public void delete(final String id) {

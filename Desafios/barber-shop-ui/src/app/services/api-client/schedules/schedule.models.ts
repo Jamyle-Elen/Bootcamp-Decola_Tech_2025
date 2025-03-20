@@ -5,23 +5,23 @@ export interface ScheduleAppointmentMonthResponse {
 }
 
 export interface ClientScheduleAppointementResponse {
-  id: number
+  id: string
   day: number
   startAt: Date
   endAt: Date
-  clientId: number
+  clientId: string
   clientName: string
 }
 
 export interface SaveScheduleResponse {
-  id: number
+  id: string
   startAt: Date
   endAt: Date
-  clientId: number
+  clientId: string
 }
 
 export interface SaveScheduleRequest {
   startAt: Date
   endAt: Date
-  clientId: number
+  clientId: string
 }

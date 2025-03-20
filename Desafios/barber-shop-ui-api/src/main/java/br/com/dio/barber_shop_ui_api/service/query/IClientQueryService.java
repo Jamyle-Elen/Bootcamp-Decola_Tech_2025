@@ -10,11 +10,11 @@ public interface IClientQueryService {
 
     List<ClientEntity> list();
 
-    void verifyPhone(final String phone);
+    void verifyName(final String name);
 
-    void verifyPhone(final String id,final String phone);
+    void verifyPhone(final String phone);
+    void verifyPhone(final String id, final String phone);
 
     void verifyEmail(final String email);
-
-    void verifyEmail(final String id,final String email);
+    void verifyEmail(final String id, final String email);
 }

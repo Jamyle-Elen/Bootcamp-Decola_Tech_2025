@@ -25,39 +25,64 @@ export class EditClientComponent implements OnInit, OnDestroy{
 
 	private httpsubscriptions?: Subscription[] = []
 
-	client: ClientModelForm = { id: 0, name: '', email: '', phone: '' }
+	client: ClientModelForm = { id: '', name: '', email: '', phone: '' }
 
   constructor(
 		@Inject(SERVICES_TOKEN.HTTP.CLIENT) private readonly httpService: IClientService,
 		@Inject(SERVICES_TOKEN.SNACKBAR) private readonly snackBarManager: ISnackbarManagerService,
+
 		private readonly activatedRoute: ActivatedRoute,
-		private readonly routers: Router
+		private readonly routers: Router,
 	) { }
 
 	ngOnInit(): void {
-		const id = this.activatedRoute.snapshot.paramMap.get('id') // isso vai p recuperar a id da rota
+		const id = this.activatedRoute.snapshot.paramMap.get('id')
 		if (!id) {
-			this.snackBarManager.show('Erro ao recuperar informações do cliente')
-			this.routers.navigate(['clients/list'])
-			return
+			this.snackBarManager.show('ID inválido.');
+			this.routers.navigate(['clients/list']);
+			return;
 		}
-		this.httpsubscriptions?.push(this.httpService.findById(Number(id)).subscribe(data => this.client = data))
-	}
+
+		this.httpsubscriptions?.push(
+    this.httpService.findById(id).subscribe({
+      next: (data) => {
+        if (data) {
+          this.client = data;
+        } else {
+          this.snackBarManager.show('Cliente não encontrado');
+          this.routers.navigate(['clients/list']);
+        }
+      },
+      error: (err) => {
+        console.error('Erro ao buscar cliente:', err);
+        this.snackBarManager.show(`Erro ao buscar cliente: ${err.message}`);
+        this.routers.navigate(['clients/list']);
+      }
+    })
+  );
+}
 
 	ngOnDestroy(): void {
 		this.httpsubscriptions?.forEach(s => s.unsubscribe())
 	}
 
-	onSubmitClient(value: ClientModelForm) {
+	onSubmitClient(value: ClientModelForm): void {
 		const { id, ...request } = value
 		if (id) {
-			this.httpsubscriptions?.push(this.httpService.update(id, request).subscribe(_ => {
-				this.snackBarManager.show('Usuário atualizado com sucesso')
-				this.routers.navigate(['clients/list'])
-			}))
-			return
-		}
-		this.snackBarManager.show('Um erro inesperado aconteceu')
-		this.routers.navigate(['clients/list'])
-	}
+			this.httpsubscriptions?.push(
+				this.httpService.update(id, request).subscribe({
+          next: () => {
+            this.snackBarManager.show('Usuário atualizado com sucesso');
+            this.routers.navigate(['clients/list']);
+          },
+          error: (err) => {
+            this.snackBarManager.show(`Erro ao atualizar o cliente: ${err.message}`);
+          }
+        })
+      );
+    } else {
+      this.snackBarManager.show('Um erro inesperado aconteceu');
+      this.routers.navigate(['clients/list']);
+    }
+  }
 }

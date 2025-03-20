@@ -72,7 +72,6 @@ export class SchedulesMonthComponent implements OnInit, OnDestroy {
       this.subscriptions.push(
         this.httpService.save(request).subscribe(() => {
 					this.snackbarManage.show('Agendamento realizado com sucesso');
-					console.log("passou por aqui 1");
           if (this.selectedDate) {
             this.fetchSchedules(this.selectedDate);
           }

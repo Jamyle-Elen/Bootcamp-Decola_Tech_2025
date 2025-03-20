@@ -11,28 +11,28 @@ export interface updateClientRequest {
 }
 
 export interface SaveClientResponse {
-  id: number;
+  id: string;
   name: string;
   email: string;
   phone: string;
 }
 
 export interface UpdateClientResponse {
-  id: number;
+  id: string;
   name: string;
   email: string;
   phone: string;
 }
 
 export interface ListClientResponse {
-  id: number;
+  id: string;
   name: string;
   email: string;
   phone: string;
 }
 
 export interface DetailClientResponse {
-  id: number;
+  id: string;
   name: string;
   email: string;
   phone: string;

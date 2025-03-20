@@ -126,7 +126,7 @@ export class ScheduleCalendarComponent implements OnDestroy, AfterViewInit, OnCh
 		}
 
 		const saved: ClientScheduleAppointmentModel = {
-			id: -1,
+			id: '',
 			day: this._selected.getDate(),
 			startAt,
 			endAt,
@@ -144,7 +144,6 @@ export class ScheduleCalendarComponent implements OnDestroy, AfterViewInit, OnCh
 
 		setTimeout(() => {
 			form.resetForm();
-			console.log("Formulário resetado com sucesso");
 		});
 	}
 
@@ -179,7 +178,6 @@ export class ScheduleCalendarComponent implements OnDestroy, AfterViewInit, OnCh
 			});
 
 		} else {
-			console.error('O tempo fornecido é inválido:', time);
 			this.newSchedule.startAt = undefined;
 			this.newSchedule.endAt = undefined;
 		}

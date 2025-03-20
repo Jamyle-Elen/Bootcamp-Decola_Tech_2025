@@ -5,7 +5,7 @@ export interface IScheduleService {
 
     save(request: SaveScheduleRequest): Observable<SaveScheduleResponse>
 
-    delete(id: number): Observable<void>
+    delete(id: string): Observable<void>
 
     listInMonth(year: number, month: number): Observable<ScheduleAppointmentMonthResponse>
 

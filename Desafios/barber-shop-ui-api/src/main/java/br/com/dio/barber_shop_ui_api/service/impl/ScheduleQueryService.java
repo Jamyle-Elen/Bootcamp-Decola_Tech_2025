@@ -5,11 +5,12 @@ import br.com.dio.barber_shop_ui_api.exception.NotFoundException;
 import br.com.dio.barber_shop_ui_api.exception.ScheduleInUseException;
 import br.com.dio.barber_shop_ui_api.repository.IScheduleRepository;
 import br.com.dio.barber_shop_ui_api.service.query.IScheduleQueryService;
+
 import lombok.AllArgsConstructor;
+
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
-// import java.time.OffsetDateTime;
 import java.util.List;
 
 @Service

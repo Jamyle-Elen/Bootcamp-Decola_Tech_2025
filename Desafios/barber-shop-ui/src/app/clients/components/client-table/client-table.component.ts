@@ -1,6 +1,5 @@
 import { AfterViewInit, Component, EventEmitter, Inject, Input, OnChanges, OnDestroy, Output, SimpleChanges, ViewChild } from '@angular/core';
 import { ClientModelTable } from '../../client.models';
-// import { ComponentsClientTableComponent } from './client-table.component';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatPaginator, MatPaginatorIntl, MatPaginatorModule } from '@angular/material/paginator';
 import { Subscription } from 'rxjs';
@@ -21,8 +20,6 @@ import { CustomPaginator } from './custom-paginator';
 		MatTableModule,
 		MatTooltipModule,
 		MatButtonModule,
-		// MatPaginator
-		// ComponentsClientTableComponent
 	],
   templateUrl: './client-table.component.html',
   styleUrl: './client-table.component.scss',
@@ -33,19 +30,19 @@ import { CustomPaginator } from './custom-paginator';
 })
 export class ComponentsClientTableComponent implements AfterViewInit, OnChanges, OnDestroy {
 
-	@Input() clients: ClientModelTable[] = [] // clientes que
+	@Input() clients: ClientModelTable[] = []
 
-	dataSource!: MatTableDataSource<ClientModelTable>; // mandar p tabela
+	dataSource!: MatTableDataSource<ClientModelTable>;
 
 	@ViewChild(MatPaginator) paginator!: MatPaginator;
 
-	displayColumns: string[] = ['name', 'email', 'phone', 'actions']; // oredem de exibiçao da coluna
+	displayColumns: string[] = ['name', 'email', 'phone', 'actions'];
 
-	private dialogManagerServiceSubscription?: Subscription // limpar memoria
+	private dialogManagerServiceSubscription?: Subscription
 
-	@Output() onConfirmDelete = new EventEmitter<ClientModelTable>() // eventos que o component vai disparar
+	@Output() onConfirmDelete = new EventEmitter<ClientModelTable>()
 
-	@Output() onRequestUpdate = new EventEmitter<ClientModelTable>() // ''             ''
+	@Output() onRequestUpdate = new EventEmitter<ClientModelTable>()
 
 	constructor(
 		@Inject(SERVICES_TOKEN.DIALOG) private readonly dialogManagerService: IDialogManagerService
@@ -80,7 +77,6 @@ export class ComponentsClientTableComponent implements AfterViewInit, OnChanges,
 
 	delete(client: ClientModelTable) {
 
-		// this.dialogManagerServiceSubscription = this.showYesNoDialog(
 		this.dialogManagerServiceSubscription = this.dialogManagerService.showYesNoDialog(
 			YesNoDialogComponent,
 			{ title: 'Exclusão do cliente', content: `Confirma a exclusão do cliente? ${client.name}` }

@@ -3,19 +3,17 @@ package br.com.dio.barber_shop_ui_api.controller;
 import br.com.dio.barber_shop_ui_api.controller.request.SaveClientRequest;
 import br.com.dio.barber_shop_ui_api.controller.request.UpdateClientRequest;
 import br.com.dio.barber_shop_ui_api.controller.response.ClientDetailResponse;
-// import br.com.dio.barber_shop_ui_api.controller.response.ListClientResponse;
 import br.com.dio.barber_shop_ui_api.controller.response.SaveClientResponse;
 import br.com.dio.barber_shop_ui_api.controller.response.UpdateClientResponse;
 import br.com.dio.barber_shop_ui_api.entity.ClientEntity;
 import br.com.dio.barber_shop_ui_api.mapper.IClientMapper;
 import br.com.dio.barber_shop_ui_api.service.IClientService;
 import br.com.dio.barber_shop_ui_api.service.query.IClientQueryService;
+
+import org.springframework.web.bind.annotation.*;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
-// import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
 
-// import static org.springframework.http.HttpStatus.CREATED;
 import static org.springframework.http.HttpStatus.NO_CONTENT;
 
 @RestController
@@ -37,9 +35,20 @@ public class ClientController {
 
     @PutMapping("{id}")
     public UpdateClientResponse update(@PathVariable final String id, @RequestBody @Valid final UpdateClientRequest request) {
-        var entity = mapper.toEntity(id, request);
-        service.update(entity);
-        return mapper.toUpdateResponse(entity);
+        try {
+            System.out.println("Recebendo requisição PUT para ID: " + id);
+            System.out.println("Dados recebidos: " + request);
+            
+            var entity = mapper.toEntity(id, request);
+            service.update(entity);
+            
+            System.out.println("Cliente atualizado com sucesso: " + entity);
+            return mapper.toUpdateResponse(entity);
+        } catch (Exception e) {
+            System.err.println("Erro ao atualizar cliente: " + e.getMessage());
+            e.printStackTrace();
+            throw new RuntimeException("Erro ao atualizar cliente.");
+        }
     }
 
     @DeleteMapping("{id}")
@@ -63,7 +72,7 @@ public class ClientController {
         }
     }
 
-    @GetMapping // ("/clients")  nn vai precisar por conta do RequestMapping
+    @GetMapping
     public Iterable<ClientEntity> listar() {
         try {
             return service.listar();

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { IClientService } from './iclients.service';
-import { Observable } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
 import { DetailClientResponse, ListClientResponse, SaveClientRequest, SaveClientResponse, updateClientRequest, UpdateClientResponse } from './client.models';
 import { HttpClient } from '@angular/common/http';
 import { Environments } from '../../../../enviroments/environments';
@@ -17,16 +17,29 @@ export class ClientsService implements IClientService {
   save(request: SaveClientRequest): Observable<SaveClientResponse> {
     return this.http.post<SaveClientResponse>(`${this.basePath}clients`, request)
   }
-  update(id: number, request: UpdateClientResponse): Observable<UpdateClientResponse> {
-    return this.http.put<UpdateClientResponse>(`${this.basePath}clients/${id}`, request)
-  }
-  delete(id: number): Observable<void> {
+	update(id: string, request: updateClientRequest): Observable<UpdateClientResponse> {
+		const { id: _, ...requestData } = request as any;
+
+		return this.http.put<UpdateClientResponse>(
+			`${this.basePath}clients/${id}`,
+			requestData
+		).pipe(
+			catchError(error => {
+				console.error('Erro na atualização:', error);
+				return throwError(() => new Error(`Falha na atualização: ${error.message || error.statusText}`));
+			})
+		);
+	}
+  delete(id: string): Observable<void> {
     return this.http.delete<void>(`${this.basePath}clients/${id}`)
   }
   list(): Observable<ListClientResponse[]> {
     return this.http.get<ListClientResponse[]>(`${this.basePath}clients`)
   }
-  findById(id: number): Observable<DetailClientResponse> {
-    return this.http.get<DetailClientResponse>(`${this.basePath}clients/${id}`)
-  }
+	findById(id: string): Observable<DetailClientResponse> {
+		if (!id || id.trim() === '') {
+			throw new Error('ID não pode ser vazio.');
+		}
+		return this.http.get<DetailClientResponse>(`${this.basePath}clients/${id}`);
+	}
 }

@@ -4,11 +4,11 @@ import { DetailClientResponse, ListClientResponse, SaveClientRequest, SaveClient
 export interface IClientService {
   save(request: SaveClientRequest): Observable<SaveClientResponse>
 
-  update(id: number, request: updateClientRequest): Observable<UpdateClientResponse>
+  update(id: string, request: updateClientRequest): Observable<UpdateClientResponse>
 
-  delete(id: number): Observable<void>
+  delete(id: string): Observable<void>
 
   list(): Observable<ListClientResponse[]>
 
-  findById(id: number): Observable<DetailClientResponse>
+  findById(id: string): Observable<DetailClientResponse>
 }

@@ -6,7 +6,6 @@ import jakarta.validation.constraints.NotNull;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.Instant;
-// import java.time.OffsetDateTime;
 
 public record SaveScheduleRequest(
         @JsonProperty("startAt")

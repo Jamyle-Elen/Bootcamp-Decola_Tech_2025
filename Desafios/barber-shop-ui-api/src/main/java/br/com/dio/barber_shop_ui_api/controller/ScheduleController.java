@@ -69,7 +69,6 @@ SaveScheduleResponse save(@RequestBody @Valid SaveScheduleRequest request) {
         service.delete(id);
     }
 
-    // mudei de get p post (so da pra mandar um body com post)
     @PostMapping("month")
     ScheduleAppointmentMonthResponse listMonth(@RequestBody final ScheduleRequest request) {
         try {

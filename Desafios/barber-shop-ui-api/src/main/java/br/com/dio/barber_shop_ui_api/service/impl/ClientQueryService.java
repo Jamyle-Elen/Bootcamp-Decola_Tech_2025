@@ -29,6 +29,13 @@ public class ClientQueryService implements IClientQueryService {
     }
 
     @Override
+    public void verifyName(String name) {
+        if (name == null || name.trim().isEmpty()) {
+            throw new IllegalArgumentException("Nome não pode ser vazio");
+        }
+    }
+
+    @Override
     public void verifyPhone(String phone) {
         if (repository.existsByPhone(phone)) {
             var message = "O telefone " + phone + " já está em uso.";

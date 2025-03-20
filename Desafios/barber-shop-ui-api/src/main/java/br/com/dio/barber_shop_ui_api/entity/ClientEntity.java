@@ -10,7 +10,6 @@ import java.util.Objects;
 import java.util.Set;
 
 import static jakarta.persistence.CascadeType.ALL;
-// import static jakarta.persistence.GenerationType.IDENTITY;
 
 @Entity
 @Table(

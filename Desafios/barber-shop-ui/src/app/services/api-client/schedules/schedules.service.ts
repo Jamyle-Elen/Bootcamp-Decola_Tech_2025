@@ -18,7 +18,7 @@ export class SchedulesService implements IScheduleService {
   save(request: SaveScheduleRequest): Observable<SaveScheduleResponse> {
     return this.http.post<SaveScheduleResponse>(`${this.basePath}schedules`, request)
   }
-  delete(id: number): Observable<void> {
+  delete(id: string): Observable<void> {
     return this.http.delete<void>(`${this.basePath}schedules/${id}`)
   }
   listInMonth(year: number, month: number): Observable<ScheduleAppointmentMonthResponse> {
