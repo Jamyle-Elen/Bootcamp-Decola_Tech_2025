@@ -1,59 +1,61 @@
-# BarberShopUi
+Barber Shop
+[![Leia o README em Inglês](https://img.shields.io/badge/README-Inglês-yellow)](./README_EN.md)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.1.
+## 📋 Sobre o Projeto
+O **BarberShop** é uma aplicação desenvolvida como parte do desafio do Bootcamp Decola Tech, oferecido pela DIO em parceria com a Avanade. A aplicação tem como objetivo gerenciar clientes e serviços de uma barbearia, permitindo cadastro, edição e visualização de informações de maneira eficiente.
 
-## Development server
+## 🚀 Tecnologias Utilizadas
+- **Java**: Utilizado no desenvolvimento do back-end.
+- **Spring Boot**: Framework para criação da API REST.
+- **Angular**: Framework utilizado no desenvolvimento do front-end.
+- **MongoDB**: Banco de dados NoSQL para armazenamento das informações.
 
-To start a local development server, run:
+<br>
 
-```bash
-ng serve
-```
+![Opera Instantâneo_2025-03-20_031317_localhost](https://github.com/user-attachments/assets/e3d68e2f-b431-4974-8562-81c881d970da)
+> Realizar o cadastro dos clientes, contendo limitações por pagina [5, 10, 15]
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+![Opera Instantâneo_2025-03-20_031512_localhost](https://github.com/user-attachments/assets/12edc12f-1fd3-4143-bb66-f234ea7d79ef)
+> Lista coontendo todos os clientes, é possivel editar e deletar caso aja necessidade.
 
-## Code scaffolding
+![Opera Instantâneo_2025-03-20_031550_localhost](https://github.com/user-attachments/assets/b633300b-6183-462a-be5a-79c254720867)
+> Calendário contendo todos os horários dos clientes, é possivel deletar agendamento caso precise.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+<br>
+## ▶ Como Executar o Projeto
+Para clonar e executar este projeto, siga os passos abaixo:
 
-```bash
-ng generate component component-name
-```
+1. **Clone o repositório**:
+   ```bash
+   git clone https://github.com/Jamyle-Elen/Bootcamp-Decola_Tech_2025.git
+   ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+2. **Instale as dependências**:
+   ```bash
+   cd barber-shop-ui/src
+   npm install
+   ```
 
-```bash
-ng generate --help
-```
+3. **Execute a aplicação**:
+   ```bash
+   npm run start
+   ```
 
-## Building
+4. **Execute o back-end**:
+Em outra aba do terminal, acesse a pasta do back-end (src\main\java\br\com\dio\barber_shop_ui_api) e rode o aquivo:
+	 ```bash
+	 BarberShopUiApiApplication.java
+	 ```
+  
+<br>
 
-To build the project run:
+<div align=center>
+	
+| ![Jamyle Elen][img] |
+|:--------------------:|
+| **Jamyle Elen**      |
+| **Desenvolvedora Full-Stack**     |
 
-```bash
-ng build
-```
+</div>
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+[img]: https://github.com/user-attachments/assets/4b3637cc-e1a0-45e4-af1b-6b37f3626ecb
