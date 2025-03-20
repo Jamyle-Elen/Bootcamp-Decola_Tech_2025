@@ -8,6 +8,7 @@ O **BarberShop** é uma aplicação desenvolvida como parte do desafio do Bootca
 - **Java**: Utilizado no desenvolvimento do back-end.
 - **Spring Boot**: Framework para criação da API REST.
 - **Angular**: Framework utilizado no desenvolvimento do front-end.
+- **Angular Material**: Design System.
 - **MongoDB**: Banco de dados NoSQL para armazenamento das informações.
 
 <br>
