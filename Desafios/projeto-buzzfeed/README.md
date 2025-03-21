@@ -1,59 +1,54 @@
-# ProjetoBuzzfeed
+# Buzzfeed
+[![Leia o README em Inglês](https://img.shields.io/badge/README-Inglês-yellow)](./README_EN.md)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.1.
+## 📋 Sobre o Projeto
+O **Buzzfeed** é uma aplicação desenvolvida durante o desafio do Bootcamp Decola Tech, oferecido pela DIO em parceria com a Avanade. Trata-se de um quiz interativo, onde, a partir de uma série de perguntas, o usuário descobre se seria um herói ou vilão.
 
-## Development server
+## 🚀 Tecnologias Utilizadas
+- **Angular**: Framework utilizado no desenvolvimento do front-end.
+- **Tailwind**: Estilização.
 
-To start a local development server, run:
+<br>
 
-```bash
-ng serve
-```
+![Buzz feed](https://github.com/user-attachments/assets/7f8e1bb8-f4ab-4035-a94e-3771bfd301a9)
+> Quiz com 5 perguntas
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+![Opera Instantâneo_2025-03-20_212901_localhost](https://github.com/user-attachments/assets/21b354c1-704d-43a4-8ca2-ca83837ce80f)
+> Exemplo quando resposta de vilão
 
-## Code scaffolding
+![Opera Instantâneo_2025-03-20_213136_localhost](https://github.com/user-attachments/assets/78ef5e10-8829-4606-a915-e0d22b6a3ee8)
+> Exemplo quando resposta de herói
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+<br>
 
-```bash
-ng generate component component-name
-```
+## ▶ Como Executar o Projeto
+Para clonar e executar este projeto, siga os passos abaixo:
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+1. **Clone o repositório**:
+   ```bash
+   git clone https://github.com/Jamyle-Elen/Bootcamp-Decola_Tech_2025.git
+   ```
 
-```bash
-ng generate --help
-```
+2. **Instale as dependências**:
+   ```bash
+   cd projeto-buzzfeed
+   npm install
+   ```
 
-## Building
+3. **Execute a aplicação**:
+   ```bash
+   npm run start
+   ```
+   
+<br>
 
-To build the project run:
+<div align=center>
+	
+| ![Jamyle Elen][img] |
+|:--------------------:|
+| **Jamyle Elen**      |
+| **Desenvolvedora Full-Stack**     |
 
-```bash
-ng build
-```
+</div>
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+[img]: https://github.com/user-attachments/assets/4b3637cc-e1a0-45e4-af1b-6b37f3626ecb
