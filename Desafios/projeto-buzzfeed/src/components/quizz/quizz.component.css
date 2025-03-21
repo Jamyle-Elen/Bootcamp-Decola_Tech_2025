@@ -1,0 +1,23 @@
+p {
+  margin: 10px 0;
+  max-width: 600px;
+}
+
+.villain-bg {
+  background-color: #121212 !important;
+}
+
+.villainContent-bg {
+  background-color: #222222 !important;
+  border: rgb(61, 52, 52) 1px;
+  margin: 15px 0;
+}
+
+.hero-bg {
+
+  background-color: #4b6a83 !important;
+}
+
+.heroContent-bg {
+  background-color: #5a83a5 !important;
+}

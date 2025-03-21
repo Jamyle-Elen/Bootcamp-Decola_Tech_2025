@@ -1,0 +1,134 @@
+{
+  "title":"Você seria um heroi ou vilão ?",
+  "questions":[
+    {
+      "id":1,
+      "question": "Qual super poder você escolheria ?",
+      "options":[
+        {"id": 1, "name":"Raios-Lasers", "alias":"A"},
+        {"id": 2, "name":"Voar", "alias":"B"},
+        {"id": 3, "name":"Explodir coisas", "alias":"A"},
+        {"id": 4, "name":"Curar feridas", "alias":"B"},
+        {"id": 5, "name":"Soltar fogo pelas mãos", "alias":"A"}
+      ]
+    },
+    {
+      "id":2,
+      "question": "Quem você salvaria primeiro ?",
+      "options":[
+        {"id": 1, "name":"Crianças", "alias":"A"},
+        {"id": 2, "name":"Idosos", "alias":"A"},
+        {"id": 3, "name":"Não saberia escolher", "alias":"B"}
+      ]
+    },
+    {
+      "id":3,
+      "question": "Qual a sua maior preocupação ao enfretar outro super ser ?",
+      "options":[
+        {"id": 1, "name":"Não destruir prédios", "alias":"B"},
+        {"id": 2, "name":"Socar a cara do inimigo", "alias":"A"},
+        {"id": 3, "name":"Não sujar meu traje", "alias":"A"},
+        {"id": 4, "name":"Não deixar ninguém se ferir", "alias":"B"}
+      ]
+    },
+    {
+      "id":4,
+      "question": "Qual o seu maior foco ?",
+      "options":[
+        {"id": 1, "name":"Ficar rico com poderes", "alias":"A"},
+        {"id": 2, "name":"Salvar a cidade", "alias":"B"}
+      ]
+    },
+    {
+      "id":5,
+      "question": "Qual o seu apelido de super ser ?",
+      "options":[
+        {"id": 1, "name":"O Terrivel", "alias":"A"},
+        {"id": 2, "name":"Amigo da vizinhança", "alias":"B"}
+      ]
+    }
+  ],
+  "results":{
+    "A": {
+      "message": "Você muito provavelmente seria um super vilão!",
+      "characters": [
+        {
+          "characterName": "Muzan Kibutsuji (Vilão)",
+          "characterImage": "https://i.pinimg.com/736x/fe/dc/9d/fedc9daf1d21541daf080c80b4f96a20.jpg",
+          "characterDescription": "Originalmente um humano, Muzan foi amaldiçoado há mais de mil anos e se tornou o primeiro oni. Ele também é o progenitor da maioria dos outros Onis e o líder dos Doze Kizuki. Ele também é o inimigo da família Kamado e o arqui-inimigo de Tanjiro Kamado e Nezuko Kamado."
+        },
+        {
+          "characterName": "itachi Uchiha (Vilão)",
+          "characterImage": "https://i0.wp.com/bitsebaits.com/wp-content/uploads/2024/01/3o-itachi-uchiha_k81j.jpg?w=707&ssl=1",
+          "characterDescription": "Foi um prodígio do clã Uchiha de Konohagakure. Ele se tornou um criminoso internacional depois de assassinar seu clã inteiro, poupando apenas a vida de seu irmão mais novo, Sasuke."
+        },
+        {
+          "characterName": "Naraku (Vilão)",
+          "characterImage": "https://pm1.aminoapps.com/7709/df95b28d36b3072b80d386d98c55d18a3a89b026r1-730-624v2_00.jpg",
+          "characterDescription": "Nascido a partir da fusão do bandido Onigumo com vários youkais, o fazendo ser um meio-youkai.Seu nome literalmente significa 'Inferno' ou também 'Hades' em japonês antigo. Ardiloso, frio, maquiavélico e ousado."
+        },
+        {
+          "characterName": "Silco (Vilão)",
+          "characterImage": "https://esportenewsmundo.com.br/wp-content/uploads/2021/12/TFT-Silco.jpg",
+          "characterDescription": "Um homem insensível e brutal, mas altamente inteligente e cauteloso, que fará de tudo para atingir seus objetivos. Ele acredita que a violência básica é a única maneira de enfrentar Piltover e unir a Resistência, e que o poder só vem para aqueles que abandonarão sua própria moral para alcançá-lo."
+        },
+        {
+          "characterName": "Zarbon (Vilão)",
+          "characterImage": "https://i0.wp.com/bitsebaits.com/wp-content/uploads/2024/07/Zarbon-Dragon-Ball-Z.jpg?w=735&ssl=1",
+          "characterDescription": "Um homem insensível e brutal, mas altamente inteligente e cauteloso, que fará de tudo para atingir seus objetivos. Ele acredita que a violência básica é a única maneira de enfrentar Piltover e unir a Resistência, e que o poder só vem para aqueles que abandonarão sua própria moral para alcançá-lo."
+        },
+        {
+          "characterName": "Esdeath (Vilã)",
+          "characterImage": "https://i0.wp.com/bitsebaits.com/wp-content/uploads/2023/09/esdeath.jpg?w=736&ssl=1",
+          "characterDescription": "Responsável pela morte de milhões de pessoas no norte do país e vários outros conflitos e guerras por conta da rebelião contra o Império. Ela cometeu o segundo maior número de atrocidades horríveis de qualquer membro do Império, atrás do próprio Primeiro Ministro Honesto"
+        },
+        {
+          "characterName": "Dr. Octopus (Vilão)",
+          "characterImage": "https://rollingstone.com.br/media/_versions/doutor_octopus_widelg.jpg",
+          "characterDescription": "Um cientista nuclear que desenvolveu dois pares de braços mecânicos controlados remotamente para manipular materiais radioativos. Um dia, seus experimentos dão errado, fundindo as partes robóticas ao seu corpo. O excesso de radiação mexe com o seu cérebro e ele se torna o perigoso vilão Doutor Octopus."
+        }
+      ]
+    },
+    "B": {
+      "message": "Você muito provavelmente seria um super Herói!",
+      "characters": [
+        {
+          "characterName": "Ken Kaneki (Herói)",
+          "characterImage": "https://wallpapers4screen.com/Uploads/26-6-2023/60375/thumb2-ken-kaneki-4k-tokyo-ghoul-characters-minimalism-creative.jpg",
+          "characterDescription": "Tem um desenvolvimento absurdo se comparado ao de outros Ghouls, suas células RC crescem em um número anormal e ele fica mais forte continuamente, ainda mais diante de uma luta na qual ele implica ter uma melhora ainda maior."
+        },
+        {
+          "characterName": "Goku (Herói)",
+          "characterImage": "https://images.immediate.co.uk/production/volatile/sites/3/2023/03/goku-dragon-ball-guru-824x490-11b2006-e1697471244240.jpg",
+          "characterDescription": "Ficando cada vez mais forte, algo que não parece terminar dado que o seu potencial é ilimitado. Goku é um cara super dedicado, sempre buscando formas de aumentar o seu poder, tendo sido assim que ultrapassou o poder dos Deuses. Os feitos de Goku são muitos e não parecem terminar por aqui, por isso é normal que Goku venha a subir algumas posições num futuro próximo."
+        },
+        {
+          "characterName": "Madoka",
+          "characterImage": "https://s.aficionados.com.br/imagens/13048150_cke.jpg",
+          "characterDescription": "Começa por ser razoavelmente frágil, evoluindo lentamente até o seu nível de poder ser semelhante ao de uma autêntica deusa. Madoka consegue por isso destruir o planeta Terra com facilidade e tem ainda a habilidade de alterar as leis do Universo se assim o entender."
+        },
+        {
+          "characterName": "Saitama (Herói)",
+          "characterImage": "https://s.aficionados.com.br/imagens/one-punch-man-saitama_cke.jpg",
+          "characterDescription": "Capaz de sobreviver a QUASE tudo, muito graças ao seu regime de treino verdadeiramente insano. Para além da força Saitama ele é ainda veloz e muito ágil. Só não fica num lugar superior da nossa lista porque para derrotar os seus adversários ele precisa de acertar com um soco neles... algo que não conseguiria fazer aos próximos personagens."
+        },
+        {
+          "characterName": "Tony Stark (Herói)",
+          "characterImage": "https://cdn.shopify.com/s/files/1/0513/5692/6151/files/oculos-tony-stark-vingadores-edith-loja-da-ciencia-9_480x480.png?v=1616287934",
+          "characterDescription": "Com sua grande riqueza e conhecimento técnico excepcional, Stark foi um dos homens mais poderosos do mundo após a morte de seus pais e desfrutou do estilo de vida de playboy por muitos anos, até ser sequestrado pelos Dez Anéis no Afeganistão, enquanto demonstrava uma frota de mísseis Jericó."
+        },
+        {
+          "characterName": "All Might (Herói)",
+          "characterImage": "https://www.einerd.com/wp-content/uploads/2019/10/All-Might-My-Hero-Academia-3-890x606.jpg",
+          "characterDescription": "Sem o conhecimento do mundo em geral, no entanto, é que o grande poder de All Might não é dele, já que ele realmente nasceu Sem Individualidade. Na verdade, a Individualidade que ele possui é aquele que foi passado para ele de seu mentor, e ele é a oitava pessoa a segurá-lo. Ele detém o poder desde que era um mero adolescente e o usou para se tornar o Símbolo da Paz que é conhecido hoje."
+        },
+        {
+          "characterName": "Levi Ackerman (Herói)",
+          "characterImage": "https://ovicio.com.br/wp-content/uploads/2021/11/20211108-levi-ackerman-fan-favorite.jpeg",
+          "characterDescription": "Tirando sua preocupação com limpeza, Levi é abrasivo e não muito amigável. Ele raramente demonstra emoções, dando uma impressão fria para os outros. Sua maneira de falar tende a ser precisa e insultuosa, seus comentários são frequentemente grosseiros ou inapropriados, e ele não deixa de provocar ou menosprezar aqueles que se opõem ou o irritam."
+        }
+      ]
+    }
+  }
+
+}

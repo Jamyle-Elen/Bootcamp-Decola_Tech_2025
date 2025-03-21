@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+* {
+  padding: 0;margin: 0;border: 0;box-sizing: 0;scroll-behavior: smooth;color:antiquewhite
+}
+
+body {
+  background-color: #1F1147;
+}

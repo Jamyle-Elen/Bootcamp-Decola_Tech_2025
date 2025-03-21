@@ -1,0 +1,33 @@
+<div [ngClass]="backgroundClass" class="flex flex-col justify-center min-h-screen w-5/5 my-10 mx-auto mt-24 border-blue-500">
+
+  <div class="flex flex-col justify-center items-center mb-2">
+    <img class="my-10" src="assets/imgs/logo.png" alt="" />
+    <h3 class="mt-5 text-lg font-semibold">{{ title }}</h3>
+  </div>
+
+  <div [ngClass]="backgroundClassTwo" *ngIf="!finished" class="flex justify-center items-center border border-indigo-600 rounded-lg bg-indigo-500 w-full h-52 text-xl font-semibold font-sans mb-5 p-4">
+    <h3>{{ questionSelected.question }}</h3>
+  </div>
+
+  <div *ngIf="!finished" class="flex flex-wrap justify-center mx-auto mb-5 gap-3">
+    <button
+      *ngFor="let option of questionSelected.options; let i = index"
+      (click)="playerChoose(option.alias)"
+      class="!mt-5 bg-transparent rounded-lg w-1/1 cursor-pointer text-white font-sans text-lg px-8 py-4 shadow-md hover:bg-yellow-500 hover:text-black hover:font-semibold active:relative active:top-1 h-20 w-[15%] m-10"
+    >
+      {{ option.name }}
+    </button>
+  </div>
+
+  <div [ngClass]="backgroundClassTwo" *ngIf="finished" class="w-full h-[450px] bg-purple-900 rounded-lg p-8 flex flex-col justify-center items-center">
+    <h1 class="text-2xl font-bold text-white">O Seu resultado é:</h1>
+    <p class="text-2xl text-white">{{name}}</p>
+
+    <img [src]="characterImage" alt="Resultado" class="h-48 w-58 object-cover shadow-lg">
+    <p class=" text-white text-center"><em>{{ characterDescription }}</em></p>
+    <button (click)="resetQuiz()" class="mt-5 p-3 bg-transparent text-black rounded-lg shadow-lg hover:shadow-xl transition cursor-pointer">
+      <i class="fas fa-rotate-right text-2xl"></i>
+    </button>
+  </div>
+
+</div>
